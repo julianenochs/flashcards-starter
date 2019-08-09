@@ -1,15 +1,16 @@
+const Deck = require('../src/Deck');
 class Turn {
     constructor(guess, card) {
-        this.guess = guess;
-        this.card = card;
+        this.guess = guess; 
+        this.card = card; 
     }
 
-    returnGuess(guess) {
-        return guess;
+    returnGuess() {
+        return this.guess;
     }
 
-    returnCard(card) {
-        return card;
+    returnCard() {
+        return this.card;
     }
 
     evaluateGuess(guess) {
@@ -19,7 +20,7 @@ class Turn {
     }
 
     giveFeedback(evaluation) {
-        return evaluation === true ? 'correct!' : 'incorrect!'
+        return evaluation ? 'correct!' : 'incorrect!'
     }
 }
 

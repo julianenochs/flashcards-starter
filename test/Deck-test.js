@@ -10,11 +10,12 @@ let card2;
 let card3;
 
 beforeEach(() => {
-    deck = new Deck();
+    deck = new Deck([card1, card2, card3]);
     card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
-})
+});
+
 describe('Deck', () => {
 
     it('should be a function', () => {
@@ -26,7 +27,7 @@ describe('Deck', () => {
     });
 
     it('should know how many cards are in a deck', () => {
-        expect(deck.countCards([card1, card2, card3])).to.eql(3)
+        expect(deck.countCards()).to.eql(3);
     });
 
 });

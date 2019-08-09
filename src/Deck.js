@@ -1,10 +1,11 @@
+const Card = require('../src/Card');
 class Deck {
-    constructor() {
-        this.cards = [];
+    constructor(cards) {
+        this.cards = cards;
     }
 
-    countCards(cards) {
-        return cards.length
+    countCards() {
+        return this.cards.length
     }
 }
 
