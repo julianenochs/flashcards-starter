@@ -29,7 +29,7 @@ describe('Round', () => {
     });
 
     it('should return the current card', () => {
-        expect(round.returnCurrentCard()).to.eql({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer:'sea otter'});
+        expect(round.returnCurrentCard()).to.eql({'id': 1, 'question': 'What is Robbie\'s favorite animal', 'answers': ['sea otter', 'pug', 'capybara'], 'correctAnswer':'sea otter'});
     });
 
     it('should keep track of a players turns', () => {

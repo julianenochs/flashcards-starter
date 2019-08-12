@@ -6,15 +6,20 @@ const Deck = require('../src/Deck');
 const Card = require('../src/Card');
 class Game {
   constructor() {
-    this.card;
-    this.deck;
-    this.round;
+    this.currentRound;
+  }
+
+  newRound() {
+    this.currentRound = new Round();
   }
 
   start() {
-    this.card = new Card(data[0]);
-    this.deck = new Deck(data);
-    this.round = new Round(deck);
+    let cards = prototypeQuestions.map(card => {
+      return new Card(card);
+    });
+    console.log(cards)
+    let deck = new Deck(cards);
+    let round = new Round(deck);
     this.printMessage(deck, round);
     this.printQuestion(round);
   }

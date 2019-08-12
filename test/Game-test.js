@@ -10,11 +10,10 @@ describe('Game', () => {
     });
 
     it('should be an instance of Game', () => {
-        let game = new Game()
+        let game = new Game();
         expect(game).to.be.an.instanceOf(Game);
+        game.start()
     });
 
-    it('should keep track of the current round', () => {
-        expect(game.currentRound()).to.eql({})
-    })
+   
 });
