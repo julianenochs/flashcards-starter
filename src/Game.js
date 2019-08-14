@@ -15,9 +15,8 @@ class Game {
 
   start() {
     let cards = prototypeQuestions.map(card => {
-      return new Card(card);
+      return new Card(card.id, card.question, card.answers, card.correctAnswer)
     });
-    console.log(cards)
     let deck = new Deck(cards);
     let round = new Round(deck);
     this.printMessage(deck, round);

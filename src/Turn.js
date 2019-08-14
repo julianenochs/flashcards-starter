@@ -15,12 +15,11 @@ class Turn {
 
     evaluateGuess(guess) {
         let checkGuess = guess === this.card.correctAnswer;
-        this.giveFeedback(checkGuess);
         return checkGuess;
     }
 
     giveFeedback(evaluation) {
-        return evaluation ? 'correct!' : 'incorrect!'
+        return evaluation === this.card.correctAnswer ? 'correct!' : 'incorrect!'
     }
 }
 
