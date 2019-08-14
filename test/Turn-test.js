@@ -7,7 +7,7 @@ const Deck = require('../src/Deck');
 
 let turn;
 let card;
-let deck;
+
 beforeEach(() => {
     card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     turn = new Turn('pug', card);
@@ -33,7 +33,7 @@ describe('Turn', () => {
     });
 
     it('should return a card', () => {
-        expect(turn.returnCard(card)).to.eql({id:1, question:'What is Robbie\'s favorite animal', answers:['sea otter', 'pug', 'capybara'], correctAnswer:'sea otter'});
+        expect(turn.returnCard(card)).to.eql({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
     });
 
     it('should evaluate a players guess', () => {

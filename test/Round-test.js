@@ -15,17 +15,17 @@ beforeEach(() => {
     round = new Round(deck);
 });
 
-describe('Round', function() {
+describe('Round', () => {
 
-    it('should be a function', function() {
+    it('should be a function', () => {
         expect(Round).to.be.a('function');
     });
 
-    it('should be an instance of round', function() {
+    it('should be an instance of round', () => {
         expect(round).to.be.an.instanceOf(Round);
     });
 
-    it('should return the current card', function() {
+    it('should return the current card', () => {
         expect(round.returnCurrentCard()).to.eql({
             id: 1,
             question: 'What is Robbie\'s favorite animal',
@@ -34,31 +34,31 @@ describe('Round', function() {
         });
     });
 
-    it('should keep track of a players turns', function() {
+    it('should keep track of a players turns', () => {
         round.returnCurrentCard();
         round.takeTurn();
         expect(round.turns).to.equal(1);
     });
 
-    it('should keep the ID of incorrect guesses', function() {
+    it('should keep the ID of incorrect guesses', () => {
         round.returnCurrentCard();
         round.takeTurn('pug');
         expect(round.incorrectGuesses).to.eql([1]);
     });
 
-    it('should calculate the percentage of correct guesses taken', function() {
+    it('should calculate the percentage of correct guesses taken', () => {
         round.returnCurrentCard();
         round.takeTurn('pug');
         round.takeTurn('sea otter');
         expect(round.calculatePercentCorrect()).to.eql(50)
     });
 
-    it('should end a round', function() {
+    it('should end a round', () => {
         round.returnCurrentCard();
         round.takeTurn('pug');
         round.takeTurn('sea otter');
         round.calculatePercentCorrect();
-        expect(round.endRound()).to.eql('** Round over! ** You answered 50% of the questions correctly!')
+        expect(round.endRound()).to.eql(`** Round over! ** You answered 50% of the questions correctly!`)
     });
 
 });

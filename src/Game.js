@@ -18,7 +18,7 @@ class Game {
       return new Card(card.id, card.question, card.answers, card.correctAnswer)
     });
     let deck = new Deck(cards);
-    let round = new Round(deck);
+    let round = new Round(deck, this);
     this.printMessage(deck, round);
     this.printQuestion(round);
   }
